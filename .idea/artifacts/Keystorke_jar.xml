@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Keystorke:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Keystorke_jar</output-path>
+    <root id="archive" name="Keystorke.jar">
+      <element id="module-output" name="Keystorke" />
+    </root>
+  </artifact>
+</component>
