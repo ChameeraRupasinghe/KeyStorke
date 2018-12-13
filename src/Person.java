@@ -21,20 +21,19 @@ public class Person {
         this.pressArray = pressArray;
         this.releaseArray = releaseArray;
 
-        this.setIntervalArray(calculateIntervalArray(this.pressArray , this.releaseArray));
-        this.setPressTimeArray(calculatePressTimeArray(this.pressArray , this.releaseArray));
+        this.setIntervalArray(calculateIntervalArray(this.pressArray, this.releaseArray));
+        this.setPressTimeArray(calculatePressTimeArray(this.pressArray, this.releaseArray));
 
-       // System.out.println(this.getName() + " registered \npressTime Array " + this.getPressTimeArray().toString() + "\nrelease Interval Array " + this.getIntervalArray());
+        // System.out.println(this.getName() + " registered \npressTime Array " + this.getPressTimeArray().toString() + "\nrelease Interval Array " + this.getIntervalArray());
 
 
-      //  System.out.println(this.getName() + " registered \npressTime " + this.pressArray.toString() + "\nreleaseTIme " + this.releaseArray);
+        //  System.out.println(this.getName() + " registered \npressTime " + this.pressArray.toString() + "\nreleaseTIme " + this.releaseArray);
         this.uid++;
     }
 
 
-
-    public ArrayList<Long> calculatePressTimeArray (ArrayList<Long> pressArray, ArrayList<Long> releaseArray){
-        ArrayList <Long> pressTimeArray = new ArrayList<>();
+    public ArrayList<Long> calculatePressTimeArray(ArrayList<Long> pressArray, ArrayList<Long> releaseArray) {
+        ArrayList<Long> pressTimeArray = new ArrayList<>();
 
         for (int i = 0; i < pressArray.size(); i++) {
             long pressTime = releaseArray.get(i) - pressArray.get(i);
@@ -42,29 +41,25 @@ public class Person {
 
         }
 
-      //  System.out.println("Press time array " + pressTimeArray.toString());
+        //  System.out.println("Press time array " + pressTimeArray.toString());
 
         return pressTimeArray;
     }
 
 
+    public ArrayList<Long> calculateIntervalArray(ArrayList<Long> pressArray, ArrayList<Long> releaseArray) {
+        ArrayList<Long> intervalArray = new ArrayList<>();
 
-    public ArrayList<Long> calculateIntervalArray (ArrayList<Long> pressArray, ArrayList<Long> releaseArray){
-        ArrayList <Long> intervalArray = new ArrayList<>();
-
-        for (int i = 0; i < pressArray.size()-1; i++) {
-            long interval = pressArray.get(i+1) - releaseArray.get(i);
+        for (int i = 0; i < pressArray.size() - 1; i++) {
+            long interval = pressArray.get(i + 1) - releaseArray.get(i);
             intervalArray.add(interval);
 
         }
 
-     //   System.out.println("Press time array " + intervalArray.toString());
+        //   System.out.println("Press time array " + intervalArray.toString());
 
         return intervalArray;
     }
-
-
-
 
 
     public String getName() {
